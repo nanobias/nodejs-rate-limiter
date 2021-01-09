@@ -5,7 +5,7 @@ const EventEmitter = require('events');
  * Limits the rate of calls to functions
  * @type {RateLimiter}
  */
-module.exports = class RateLimiter extends EventEmitter {
+class RateLimiter extends EventEmitter {
     constructor(rate, time_unit) {
         super();
 
@@ -123,3 +123,6 @@ class Task {
         (async () => this.cb())();
     }
 }
+
+
+module.exports = RateLimiter;
